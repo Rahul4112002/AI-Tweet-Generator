@@ -1,7 +1,7 @@
 // API URL - automatically uses production URL if deployed, otherwise localhost
 const API_URL = window.location.hostname === 'localhost' 
     ? 'http://localhost:8000/api'
-    : 'https://ai-tweet-generator-73ge.onrender.com';
+    : 'https://ai-tweet-generator-73ge.onrender.com/api';
 
 // DOM Elements
 const topicInput = document.getElementById('topic');
