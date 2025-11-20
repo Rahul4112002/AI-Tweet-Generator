@@ -1,0 +1,10 @@
+langgraph
+langchain
+langchain-groq
+langchain-core
+langgraph-checkpoint
+langgraph-checkpoint-sqlite
+python-dotenv
+pydantic
+fastapi
+uvicorn[standard]

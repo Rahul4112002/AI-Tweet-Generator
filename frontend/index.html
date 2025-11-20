@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tweet Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Tweet Generator</h1>
+        </header>
+
+        <div class="card card-input">
+            <h2>Generate Your Tweet</h2>
+            
+            <div class="form-group">
+                <label for="topic">Tweet Topic</label>
+                <input 
+                    type="text" 
+                    id="topic" 
+                    class="input" 
+                    placeholder="e.g., working from home, coffee addiction, monday mornings..."
+                >
+            </div>
+
+            <button id="generateBtn" class="btn btn-primary">
+                ✨ Generate Tweet
+            <!-- </button>
+                <span class="btn-text">✨ Generate Tweet</span>
+            </button> -->
+
+            <div id="errorMessage" class="error-message hidden"></div>
+        </div>
+
+        <div id="loadingSection" class="card loading-card hidden">
+            <h3>🤖 AI is cooking up something viral...</h3>
+            <div class="loading">
+                <div class="loading-dot"></div>
+                <div class="loading-dot"></div>
+                <div class="loading-dot"></div>
+            </div>
+        </div>
+
+        <div id="resultSection" class="card card-result hidden">
+            <div class="result-header">
+                <h2>✅ Final Tweet</h2>
+                <span id="evaluationBadge" class="badge"></span>
+            </div>
+
+            <div id="finalTweet" class="tweet-display"></div>
+
+            <div class="tweet-meta">
+                <span>📝 Topic: <strong id="resultTopic"></strong></span>
+                <span class="divider">|</span>
+                <span>🔄 Iterations: <strong id="resultIterations"></strong></span>
+                <span class="divider">|</span>
+                <span>📏 Length: <strong id="resultLength"></strong>/280</span>
+            </div>
+
+            <button id="copyBtn" class="btn btn-secondary">
+                📋 Copy to Clipboard
+            </button>
+        </div>
+
+        <div id="historySection" class="card card-history hidden">
+            <h2>🔍 Generation History</h2>
+            <div id="historyContainer"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

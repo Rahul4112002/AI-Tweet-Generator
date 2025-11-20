@@ -1,0 +1,353 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --black: #000000;
+    --white: #ffffff;
+    --gray: #808080;
+    --border-width: 4px;
+    --shadow-offset: 6px;
+}
+
+body {
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    background-color: var(--white);
+    color: var(--black);
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 30px;
+    background: var(--white);
+    color: var(--black);
+    border: var(--border-width) solid var(--black);
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--black);
+}
+
+.header h1 {
+    font-size: 48px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.card {
+    background: var(--white);
+    border: var(--border-width) solid var(--black);
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--black);
+}
+
+.card h2 {
+    font-size: 24px;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.card h3 {
+    font-size: 20px;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+.input {
+    width: 100%;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    border: var(--border-width) solid var(--black);
+    background: var(--white);
+    color: var(--black);
+    outline: none;
+    transition: all 0.2s;
+}
+
+.input:focus {
+    box-shadow: 4px 4px 0 var(--black);
+    transform: translate(-2px, -2px);
+}
+
+.input::placeholder {
+    color: var(--gray);
+}
+
+.slider {
+    width: 100%;
+    height: 8px;
+    background: var(--white);
+    border: var(--border-width) solid var(--black);
+    outline: none;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    background: var(--black);
+    cursor: pointer;
+    border: var(--border-width) solid var(--black);
+}
+
+.slider::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+    background: var(--black);
+    cursor: pointer;
+    border: var(--border-width) solid var(--black);
+}
+
+.slider-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--gray);
+    text-transform: uppercase;
+}
+
+.btn {
+    width: 100%;
+    padding: 18px 32px;
+    font-size: 18px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: var(--border-width) solid var(--black);
+    cursor: pointer;
+    transition: all 0.2s;
+    background: var(--white);
+    color: var(--black);
+}
+
+.btn-primary {
+    background: var(--black);
+    color: var(--white);
+}
+
+.btn:hover:not(:disabled) {
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--black);
+    transform: translate(-2px, -2px);
+}
+
+.btn:active:not(:disabled) {
+    box-shadow: 2px 2px 0 var(--black);
+    transform: translate(0, 0);
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-secondary {
+    background: var(--white);
+    color: var(--black);
+    margin-top: 16px;
+}
+
+.error-message {
+    margin-top: 16px;
+    padding: 16px;
+    background: var(--white);
+    border: var(--border-width) solid var(--black);
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    padding: 20px;
+}
+
+.loading-dot {
+    width: 16px;
+    height: 16px;
+    background: var(--black);
+    border-radius: 50%;
+    animation: bounce 1.4s infinite ease-in-out;
+}
+
+.loading-dot:nth-child(1) {
+    animation-delay: -0.32s;
+}
+
+.loading-dot:nth-child(2) {
+    animation-delay: -0.16s;
+}
+
+@keyframes bounce {
+    0%, 80%, 100% {
+        transform: scale(0);
+    }
+    40% {
+        transform: scale(1);
+    }
+}
+
+.loading-card {
+    text-align: center;
+}
+
+.card-result {
+    background: var(--white);
+}
+
+.result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.badge {
+    padding: 8px 16px;
+    font-size: 12px;
+    font-weight: 900;
+    text-transform: uppercase;
+    border: var(--border-width) solid var(--black);
+    background: var(--white);
+    letter-spacing: 1px;
+}
+
+.tweet-display {
+    padding: 24px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.5;
+    border: var(--border-width) solid var(--black);
+    background: var(--white);
+    margin-bottom: 16px;
+    min-height: 100px;
+}
+
+.tweet-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--gray);
+    text-transform: uppercase;
+}
+
+.tweet-meta .divider {
+    color: var(--black);
+}
+
+.tweet-meta strong {
+    color: var(--black);
+}
+
+.card-history h2 {
+    margin-bottom: 24px;
+}
+
+.history-item {
+    padding: 20px;
+    margin-bottom: 16px;
+    border: var(--border-width) solid var(--black);
+    background: var(--white);
+}
+
+.history-item:last-child {
+    margin-bottom: 0;
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.iteration-label {
+    font-size: 14px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.history-tweet {
+    padding: 16px;
+    background: var(--white);
+    border: 2px solid var(--black);
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.history-feedback {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--gray);
+}
+
+.history-feedback strong {
+    color: var(--black);
+}
+
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 32px;
+    }
+
+    .header p {
+        font-size: 14px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .tweet-meta {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .tweet-meta .divider {
+        display: none;
+    }
+}
