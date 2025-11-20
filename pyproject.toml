@@ -1,7 +1,10 @@
 [project]
 name = "tweet-generation-workflow"
 version = "0.1.0"
-description = "Add your description here"
+description = "AI-powered tweet generator using LangGraph workflow"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = []
+
+[tool.poetry]
+package-mode = false
