@@ -18,8 +18,8 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:5173",
         "http://localhost:3000",
-        "https://*.netlify.app",
-        "https://*.netlify.com"
+        "https://ai-tweet-generator-72ge.onrender.com",
+        "https://ai-tweet-generator.netlify.app"
     ],
     allow_credentials=True,
     allow_methods=["*"],
