@@ -183,6 +183,62 @@ All stages use `llama-3.3-70b-versatile` for consistent quality. You can modify 
 - Evaluator: 0.3 (critical)
 - Optimizer: 0.7 (balanced)
 
+## Deployment
+
+### Deploy Backend on Render
+
+1. **Push your code to GitHub**
+
+2. **Create a new Web Service on Render**
+   - Go to [Render Dashboard](https://dashboard.render.com)
+   - Click "New +" → "Web Service"
+   - Connect your GitHub repository
+
+3. **Configure the service**
+   - Name: `tweet-generator-api`
+   - Environment: `Python 3`
+   - Build Command: `pip install -r backend/requirements.txt`
+   - Start Command: `cd backend && uvicorn app.main:app --host 0.0.0.0 --port $PORT`
+
+4. **Set Environment Variables**
+   - Add `GROQ_API_KEY` with your API key
+   - Add `PYTHON_VERSION` = `3.12.0`
+
+5. **Deploy!** Render will automatically deploy your backend
+
+6. **Note your backend URL** (e.g., `https://tweet-generator-api.onrender.com`)
+
+### Deploy Frontend on Netlify
+
+1. **Update API URL in `frontend/script.js`**
+   - Replace `https://tweet-generator-api.onrender.com/api` with your actual Render backend URL
+
+2. **Deploy to Netlify**
+   - Go to [Netlify](https://app.netlify.com)
+   - Click "Add new site" → "Import an existing project"
+   - Connect your GitHub repository
+   - Build settings:
+     - Base directory: Leave empty or set to `/`
+     - Build command: Leave empty
+     - Publish directory: `frontend`
+
+3. **Deploy!** Netlify will build and deploy your frontend
+
+### Alternative: One-Click Deploy
+
+**Backend (Render):**
+
+The `render.yaml` file is already configured. Just connect your repo to Render.
+
+**Frontend (Netlify):**
+
+The `netlify.toml` file is already configured. Just drag and drop the `frontend` folder or connect your repo.
+
+### Environment Variables
+
+Make sure to set these on Render:
+- `GROQ_API_KEY` - Your Groq API key
+
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
